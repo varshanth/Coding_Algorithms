@@ -8,8 +8,8 @@ Each number in C may only be used once in the combination.
 Note:
 All numbers (including target) will be positive integers.
 The solution set must not contain duplicate combinations.
-For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8, 
-A solution set is: 
+For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,
+A solution set is:
 [
   [1, 7],
   [1, 2, 5],
@@ -50,7 +50,7 @@ class Solution(object):
         self.explore_comb_sum_dfs([], target, sorted(candidates),
                                   accepted_combin)
         return list(accepted_combin.keys())
-    
+
     def explore_comb_sum_dfs(self, cur_combin, rem_sum, choices,
                              accepted_combin):
         for i in range(len(choices)):
@@ -63,7 +63,7 @@ class Solution(object):
                         accepted_combin[key] = None
                 else:
                     self.explore_comb_sum_dfs(cur_combin, new_rem_sum,
-                                          choices[i:], accepted_combin)
+                                          choices[i+1:], accepted_combin)
                 cur_combin.pop()
             else:
                 break

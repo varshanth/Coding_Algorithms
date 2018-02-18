@@ -15,11 +15,11 @@ Algorithm:
     of even number n/2)
     4) Keep track of the middle node
     5) Reverse the second half of the linked list
-    6) Use 2 pointers, one pointing to head and one pointing to the 
+    6) Use 2 pointers, one pointing to head and one pointing to the
     middle_node.next, and iterate (n/2) nodes while comparing its values.
     Return false if the values aren't equal
     7) Return true if the previous iteration didn't return false already
-    
+
 e.g)
 Start             1  ->  2  ->  3  ->  3  ->  2  ->  1
                                 m
@@ -28,10 +28,10 @@ Step 3 to 5       1  ->  2  ->  3  ->  1  ->  2  ->  3
 
 Step 6            1  ->  2  ->  3  ->  1  ->  2  ->  3
                   s                    m
-                  
+
                   1  ->  2  ->  3  ->  1  ->  2  ->  3
                          s                    m
-                         
+
                   1  ->  2  ->  3  ->  1  ->  2  ->  3
                                 s                    m
 '''
@@ -80,4 +80,5 @@ class Solution(object):
             if from_start.val != from_middle.val:
                 return False
             from_start = from_start.next
-            from_midd
+            from_middle = from_middle.next
+        return True
